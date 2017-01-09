@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    background-color: #EEE;
+    color: #222;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+code {
+    font-size: inherit;
+}
+
+article code {
+    padding: 0.1em 0.2em;
+    background-color: #CCC;
+    color: #333;
+    border: 1px solid;
+    border-radius: 0.2em;
+}
+
+main {
+    width: 40rem;
+    max-width: 90%;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+
+header {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+h1, h2 { margin: 0.8em 0; }
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.3rem; }
+h3 { font-size: 1.5rem; }
+
+
+article {
+    font-size 1.5rem;
+}
+
+.post {
+    margin-top: 2.5em;
+}
+
+.post p {
+    font-size: 1.1rem;
+    padding: 0 3%;
+}
+
+
+@media (max-width: 35rem) {
+    header { margin: 2rem 0; }
+    h2, h3 { font-size: 1.3rem; }
+    
+    .post p {
+        font-size: 1rem;
+        padding: 0;
+    }
+}
