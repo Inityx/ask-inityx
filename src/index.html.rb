@@ -41,10 +41,10 @@ html = Nokogiri::HTML::Builder.new(encoding: 'utf-8') { |doc|
           }
           doc.h2 {
             doc.text(
-              <<~SUBTITLE
-                Some technology-related questions
-                I had in high school, and the answers
-                I never got
+              <<-SUBTITLE
+Some technology-related questions
+I had in high school, and the answers
+I never got
               SUBTITLE
             )
           }
