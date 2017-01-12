@@ -11,7 +11,7 @@ POST_DIR = ARGV[1]
 abort 'No post directory specified' unless POST_DIR
 
 posts = Dir.glob("#{POST_DIR}/*.yml").sort.reduce({}) do |hash, filename|
-  slug = File.basename(filename, '.yml')
+  slug = /\d+-(.+).yml$/.match(File.basename(filename))[1]
   post = Post.load(filename)
 
   hash.merge(slug => post)
