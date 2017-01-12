@@ -1,9 +1,0 @@
-title: How does <code>printf()</code> work?
-content:
-  - 'This is some sample text, it goes
-  in the post about <code>printf()</code>.
-  This should be all in the same paragraph.'
-  
-  - 'This line should be in its own paragraph.
-  This one should be in the second one
-  as well.'

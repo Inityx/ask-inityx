@@ -1,0 +1,25 @@
+title: How does <code>printf()</code> work in C/++?
+content:
+  - "<code>printf()</code> is part of a family of IO functions in the C
+    Standard IO library <code>stdio.h</code>. <code>printf()</code> is so named
+    because it is responsible for printing formatted strings to the default output:
+    a virtual file called <code>stdout</code>."
+  - '<code>printf()</code> does not do any of the printing itself; it formats
+    the string according to its arguments, and invokes a <code>write()</code>
+    system call with the newly formatted string as an argument.'
+  - "<code>stdin</code> and <code>stdout</code> operate as virtual files; they
+    do not have real locations on the file system, and even though they are
+    represented by the file descriptors <code>0</code> and <code>1</code> in
+    programs, they are unique to each process in the kernel. When a program runs
+    from a terminal, that program's <code>stdout</code> and <code>stdin</code> are
+    set in the kernel to be the same file as the virtual files the terminal uses
+    for input and output.  The terminal continuously reads from the file as the
+    program writes to it. This also allows multiple processes to output to the same
+    terminal all at once."
+  - '<code>printf(string)</code> is equivalent to <code>fprintf(stdout,
+    string)</code>.  You may also manually make the <code>write()</code> system
+    call using the File Control library <code>fcntl.h</code>, but it is far more
+    convenient to just use <code>stdio</code>.'
+  - "Output redirection works by assigning the program's output to a real file
+    rather than the virtual one connected to the terminal, wheras piping sets
+    up a virtual file between two processes."

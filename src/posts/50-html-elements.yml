@@ -1,0 +1,5 @@
+title: What's the difference between a <code>&lt;div&gt;</code> and a <code>&lt;span&gt;</code>?
+content:
+    - element flowing
+    - css overrides everything
+    - HTML5 semantic elements
