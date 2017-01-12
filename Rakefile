@@ -10,9 +10,39 @@ POST_PATTERN = /^\d+(-.+\.yml)$/
 
 task default: [:style, :build]
 
-# Rubocop
+task run: [:style, :build, :open]
+
+# Style
 require 'rubocop/rake_task'
 RuboCop::RakeTask.new(:style)
+
+# Build
+task build: [
+  :build_dir,
+  "#{BUILD}/index.html",
+  "#{BUILD}/index.css",
+  "#{BUILD}/index.js"
+]
+
+task :build_dir do
+  Dir.mkdir(BUILD) unless Dir.exist?(BUILD)
+end
+
+file "#{BUILD}/index.html" => (["#{SRC}/index.html.rb"] + Dir.glob("#{SRC}/posts/*.yml")) do
+  ruby "#{SRC}/index.html.rb", BUILD, POSTS
+end
+
+file "#{BUILD}/index.css" => "#{SRC}/index.css" do
+  FileUtils.cp("#{SRC}/index.css", "#{BUILD}/index.css")
+end
+
+file "#{BUILD}/index.js" do
+end
+
+task :open do
+  sh 'xdg-open', "#{BUILD}/index.html"
+  sleep 1
+end
 
 # Renumbering
 task :renumber do
@@ -28,27 +58,4 @@ task :renumber do
   changelist.each do |old, new|
     FileUtils.mv("#{POSTS}/#{old}", "#{POSTS}/#{new}")
   end
-end
-
-# Build
-task build: [
-  :build_dir,
-  "#{BUILD}/index.html",
-  "#{BUILD}/index.css",
-  "#{BUILD}/index.js"
-]
-
-task :build_dir do
-  Dir.mkdir(BUILD) unless Dir.exist?(BUILD)
-end
-
-file "#{BUILD}/index.html" => (["#{SRC}/index.html.rb"] + Dir.glob("#{SRC}/posts/*.yml")) do
-  ruby("#{SRC}/index.html.rb", BUILD, POSTS)
-end
-
-file "#{BUILD}/index.css" => "#{SRC}/index.css" do
-  FileUtils.cp("#{SRC}/index.css", "#{BUILD}/index.css")
-end
-
-file "#{BUILD}/index.js" do
 end
