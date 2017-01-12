@@ -46,7 +46,7 @@ end
 
 # Renumbering
 task :renumber do
-  posts = Dir.glob("#{POSTS}/*.yml").map { |filename| File.basename(filename) }
+  posts = Dir.glob("#{POSTS}/*.yml").map { |filename| File.basename(filename) }.sort
   char_width = (posts.length - 1).to_s.length
 
   changelist = posts.each_with_index.reduce({}) do |hash, (old_filename, index)|
@@ -56,6 +56,10 @@ task :renumber do
   end
 
   changelist.each do |old, new|
-    FileUtils.mv("#{POSTS}/#{old}", "#{POSTS}/#{new}")
+    begin
+      FileUtils.mv("#{POSTS}/#{old}", "#{POSTS}/#{new}")
+    rescue ArgumentError
+      next
+    end
   end
 end
