@@ -21,7 +21,7 @@ task :renumber do
 
   changelist = posts.each_with_index.reduce({}) do |hash, (old_filename, index)|
     basename = POST_PATTERN.match(old_filename)[1]
-    new_filename = format("%0#{char_width}d", index) + basename
+    new_filename = format("%0#{char_width}d0", index) + basename
     hash.merge(old_filename => new_filename)
   end
 
