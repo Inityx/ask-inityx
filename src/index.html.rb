@@ -10,7 +10,7 @@ HTML_FILE = File.expand_path('index.html', BUILD_DIR).freeze
 POST_DIR = ARGV[1]
 abort 'No post directory specified' unless POST_DIR
 
-posts = Dir.glob("#{POST_DIR}/*.yml").reduce({}) do |hash, filename|
+posts = Dir.glob("#{POST_DIR}/*.yml").sort.reduce({}) do |hash, filename|
   slug = File.basename(filename, '.yml')
   post = Post.load(filename)
 
