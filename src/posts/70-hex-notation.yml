@@ -1,4 +1,11 @@
 title: What's the deal with Hex notation?
 content:
-    - 0xNumber
-    - Significance to binary representation
+    - Hexadecimal numbers are written with the digits
+      <code>0123456789ABCDEF</code>. The format of <code>0xFFFFFFFF</code>
+      (<code>0x</code> signifying the start of a hex number) is standardized, and is
+      one of the
+      <a href="http://en.cppreference.com/w/cpp/language/integer_literal">C/++ Integer
+      Literal</a> formats.
+    - Hexadecimal is often used in Computer Science because of their easy
+      conversion to Binary; each hexidecimal digit correspond to half a
+      byte. <code>0xC2</code> equals <code>0b1100'0010</code>.
