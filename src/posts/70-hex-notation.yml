@@ -6,6 +6,6 @@ content:
       one of the
       <a href="http://en.cppreference.com/w/cpp/language/integer_literal">C/++ Integer
       Literal</a> formats.
-    - Hexadecimal is often used in Computer Science because of their easy
-      conversion to Binary; each hexidecimal digit correspond to half a
+    - Hexadecimal is often used in Computer Science because of its easy
+      conversion to Binary; each hexidecimal digit corresponds to half a
       byte. <code>0xC2</code> equals <code>0b1100'0010</code>.
