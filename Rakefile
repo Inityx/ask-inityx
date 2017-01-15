@@ -28,7 +28,7 @@ task :build_dir do
   Dir.mkdir(BUILD) unless Dir.exist?(BUILD)
 end
 
-file "#{BUILD}/index.html" => (["#{SRC}/index.html.rb"] + Dir.glob("#{SRC}/posts/*.yml")) do
+file "#{BUILD}/index.html" => (["#{SRC}/index.html.rb", "#{SRC}/post.rb"] + Dir.glob("#{SRC}/posts/*.yml")) do
   ruby "#{SRC}/index.html.rb", BUILD, POSTS
 end
 
