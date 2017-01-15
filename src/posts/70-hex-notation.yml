@@ -1,11 +1,11 @@
 title: What's the deal with Hex notation?
 content:
     - Hexadecimal numbers are written with the digits
-      <code>0123456789ABCDEF</code>. The format of <code>0xFFFFFFFF</code>
-      (<code>0x</code> signifying the start of a hex number) is standardized, and is
+      <pre>0123456789ABCDEF</pre>. The format of <pre>0xFFFFFFFF</pre>
+      (<pre>0x</pre> signifying the start of a hex number) is standardized, and is
       one of the
       <a href="http://en.cppreference.com/w/cpp/language/integer_literal">C/++ Integer
       Literal</a> formats.
     - Hexadecimal is often used in Computer Science because of its easy
       conversion to Binary; each hexidecimal digit corresponds to half a
-      byte. <code>0xC2</code> equals <code>0b1100'0010</code>.
+      byte. <pre>0xC2</pre> equals <pre>0b1100'0010</pre>.

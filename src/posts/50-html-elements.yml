@@ -1,18 +1,18 @@
-title: What's the difference between a <code>&lt;div&gt;</code> and a <code>&lt;span&gt;</code>?
+title: What's the difference between a <pre>&lt;div&gt;</pre> and a <pre>&lt;span&gt;</pre>?
 content:
-    - "The effective difference between <code>&lt;div&gt;</code> and
-      <code>&lt;span&gt;</code> is how they are styled by default. When you
+    - "The effective difference between <pre>&lt;div&gt;</pre> and
+      <pre>&lt;span&gt;</pre> is how they are styled by default. When you
       fire up an HTML document in your browser with no CSS, the browser applies a
       'default stylesheet'. Each type of tag in the HTML standard gets its own style
       predefined."
-    - "<code>&lt;div&gt;</code> has the CSS <code>display: block;</code> by
-      default, whereas <code>&lt;span&gt;</code> is typically not styled and
-      falls back to <code>display: inline;</code>. HTML elements with the display
-      type <code>block</code> will start a new 'row' in the document layout, while
-      <code>inline</code> elements will be placed inline with the previous and next
+    - "<pre>&lt;div&gt;</pre> has the CSS <pre>display: block;</pre> by
+      default, whereas <pre>&lt;span&gt;</pre> is typically not styled and
+      falls back to <pre>display: inline;</pre>. HTML elements with the display
+      type <pre>block</pre> will start a new 'row' in the document layout, while
+      <pre>inline</pre> elements will be placed inline with the previous and next
       elements."
-    - "This means that the intended use cases for <code>&lt;div&gt;</code> and
-      <code>&lt;span&gt;</code> are page structure and text styling,
+    - "This means that the intended use cases for <pre>&lt;div&gt;</pre> and
+      <pre>&lt;span&gt;</pre> are page structure and text styling,
       respectively. Because of the cascading nature of CSS, you can technically make
       them do whatever you want, but it's always best to follow a convention if
       you're able to."
