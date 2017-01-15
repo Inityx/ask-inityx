@@ -1,5 +1,5 @@
-title: Why is <pre>std::</pre> necessary with the C++ standard library?
+title: Why is <mark>std::</mark> necessary with the C++ standard library?
 content:
-    - What is namespacing, and how is stdlib namespaced
-    - Why it's a good idea
-    - Ways you can diable it that aren't literally Hitler
+  - What is namespacing, and how is stdlib namespaced
+  - Why it's a good idea
+  - Ways you can diable it that aren't literally Hitler

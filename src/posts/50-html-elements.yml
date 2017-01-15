@@ -1,18 +1,21 @@
-title: What's the difference between a <pre>&lt;div&gt;</pre> and a <pre>&lt;span&gt;</pre>?
+title: What's the difference between a <mark>&lt;div&gt;</mark> and a <mark>&lt;span&gt;</mark>?
 content:
-    - "The effective difference between <pre>&lt;div&gt;</pre> and
-      <pre>&lt;span&gt;</pre> is how they are styled by default. When you
-      fire up an HTML document in your browser with no CSS, the browser applies a
-      'default stylesheet'. Each type of tag in the HTML standard gets its own style
-      predefined."
-    - "<pre>&lt;div&gt;</pre> has the CSS <pre>display: block;</pre> by
-      default, whereas <pre>&lt;span&gt;</pre> is typically not styled and
-      falls back to <pre>display: inline;</pre>. HTML elements with the display
-      type <pre>block</pre> will start a new 'row' in the document layout, while
-      <pre>inline</pre> elements will be placed inline with the previous and next
-      elements."
-    - "This means that the intended use cases for <pre>&lt;div&gt;</pre> and
-      <pre>&lt;span&gt;</pre> are page structure and text styling,
-      respectively. Because of the cascading nature of CSS, you can technically make
-      them do whatever you want, but it's always best to follow a convention if
-      you're able to."
+  - >
+    The effective difference between <mark>&lt;div&gt;</mark> and
+    <mark>&lt;span&gt;</mark> is how they are styled by default. When you
+    fire up an HTML document in your browser with no CSS, the browser applies a
+    'default stylesheet'. Each type of tag in the HTML standard gets its own style
+    predefined.
+  - >
+    <mark>&lt;div&gt;</mark> has the CSS <mark>display: block;</mark> by
+    default, whereas <mark>&lt;span&gt;</mark> is typically not styled and
+    falls back to <mark>display: inline;</mark>. HTML elements with the display
+    type <mark>block</mark> will start a new 'row' in the document layout, while
+    <mark>inline</mark> elements will be placed inline with the previous and next
+    elements.
+  - >
+    This means that the intended use cases for <mark>&lt;div&gt;</mark> and
+    <mark>&lt;span&gt;</mark> are page structure and text styling,
+    respectively. Because of the cascading nature of CSS, you can technically make
+    them do whatever you want, but it's always best to follow a convention if
+    you're able to.

@@ -6,12 +6,15 @@ body {
     line-height: 1.5;
 }
 
-pre {
+mark {
     display: inline;
     font-size: inherit;
+    font-family: monospace;
+    background: inherit;
+    color: inherit;
 }
 
-article pre {
+article mark {
     padding: 0.1em 0.2em;
     background-color: #CCC;
     color: #333;
@@ -48,6 +51,10 @@ article {
 
 .post p {
     font-size: 1.1rem;
+    padding: 0 3%;
+}
+
+.post pre {
     padding: 0 3%;
 }
 

@@ -1,4 +1,4 @@
 title: What's the deal with C strings and C++ strings?
 content:
-    - c strings are just pointers
-    - c++ strings are objects with + and = methods
+  - c strings are just pointers
+  - c++ strings are objects with + and = methods

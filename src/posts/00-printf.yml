@@ -1,25 +1,30 @@
-title: How does <pre>printf()</pre> work in C/++?
+title: How does <mark>printf()</mark> work in C/++?
 content:
-  - "<pre>printf()</pre> is part of a family of IO functions in the C
-    Standard IO library <pre>stdio.h</pre>. <pre>printf()</pre> is so named
+  - >
+    <mark>printf()</mark> is part of a family of IO functions in the C
+    Standard IO library <mark>stdio.h</mark>. <mark>printf()</mark> is so named
     because it is responsible for printing formatted strings to the default output:
-    a virtual file called <pre>stdout</pre>."
-  - '<pre>printf()</pre> does not do any of the printing itself; it formats
-    the string according to its arguments, and invokes a <pre>write()</pre>
-    system call with the newly formatted string as an argument.'
-  - "<pre>stdin</pre> and <pre>stdout</pre> operate as virtual files; they
+    a virtual file called <mark>stdout</mark>.
+  - >
+    <mark>printf()</mark> does not do any of the printing itself; it formats
+    the string according to its arguments, and invokes a <mark>write()</mark>
+    system call with the newly formatted string as an argument.
+  - >
+    <mark>stdin</mark> and <mark>stdout</mark> operate as virtual files; they
     do not have real locations on the file system, and even though they are
-    represented by the file descriptors <pre>0</pre> and <pre>1</pre> in
+    represented by the file descriptors <mark>0</mark> and <mark>1</mark> in
     programs, they are set to different values inside the kernel. When a program
-    runs from a terminal, that program's <pre>stdout</pre> and <pre>stdin</pre>
+    runs from a terminal, that program's <mark>stdout</mark> and <mark>stdin</mark>
     are set in the kernel to be the same virtual files that the terminal
     uses for input and output. The terminal continuously reads from the file as
     the program writes to it; this also allows multiple processes to output to the
-    same terminal all at once."
-  - '<pre>printf(string)</pre> is equivalent to <pre>fprintf(stdout,
-    string)</pre>.  You may also manually make the <pre>write()</pre> system
-    call using the File Control library <pre>fcntl.h</pre>, but it is far more
-    convenient to just use <pre>stdio</pre>.'
-  - "Output redirection works by assigning the program's output to a real file
+    same terminal all at once.
+  - >
+    <mark>printf(string)</mark> is equivalent to <mark>fprintf(stdout,
+    string)</mark>.  You may also manually make the <mark>write()</mark> system
+    call using the File Control library <mark>fcntl.h</mark>, but it is far more
+    convenient to just use <mark>stdio</mark>.
+  - >
+    Output redirection works by assigning the program's output to a real file
     rather than the virtual one connected to the terminal, wheras piping sets
-    up a virtual file between two processes."
+    up a virtual file between two processes.
