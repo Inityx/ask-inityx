@@ -18,7 +18,7 @@ content:
             <span class="hl-type">int</span> y;
         } point;
         
-        <span class="hl-type">void</span> foo(<span class="hl-type">point</span> x) {
+        <span class="hl-type">void</span> foo(point x) {
             <span class="hl-comment">// do something with x</span>
         }
     }
