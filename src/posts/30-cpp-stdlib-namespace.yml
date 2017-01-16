@@ -1,5 +1,49 @@
 title: Why is <mark>std::</mark> necessary with the C++ standard library?
 content:
-  - What is namespacing, and how is stdlib namespaced
-  - Why it's a good idea
-  - Ways you can diable it that aren't literally Hitler
+  - >
+    Namespacing is a way to encapsulate code, just like attaching it to an
+    object as a method or putting it in a function; namespacing is just one level
+    above either of those. In fact, the syntax for using static member variables
+    and functions is the same as namespaces. The C++ Standard Library and Standard
+    Template Library are declared in the <mark>std</mark> namespace. This means
+    that if you want to use a string, you specify that you want the Standard
+    Library string by saying <mark>std::string</mark>.
+  - |
+    <code><pre>
+    <span class="hl-include">#include &lt;yours&gt;</span>
+    
+    <span class="hl-structure">namespace</span> my {
+        <span class="hl-keyword">typedef</span> <span class="hl-structure">struct</span> {
+            <span class="hl-type">int</span> x;
+            <span class="hl-type">int</span> y;
+        } point;
+        
+        <span class="hl-type">void</span> foo(<span class="hl-type">point</span> x) {
+            <span class="hl-comment">// do something with x</span>
+        }
+    }
+    
+    <span class="hl-type">int</span> main() {
+        your::point x = your::point(<span class="hl-number">5</span>,<span class="hl-number">6</span>)
+        your::foo(x);
+        
+        my::point y = my::point(<span class="hl-number">5</span>,<span class="hl-number">6</span>)
+        my::foo(y);
+    }
+    </pre></code>
+  - >
+    In this example, we have our namespace <mark>my</mark>, and the namespace
+    <mark>your</mark> from the included library. Namespacing allows both versions
+    of the code to exist simultaneously in the same scope. It is also useful for
+    associating code which may be spread across several files, and making your code
+    more self-explanatory by adding context to otherwise ambiguous names.
+
+  - >
+    Sometimes, however, it's really annoying and unnecessary to preserve explicit
+    namespacing in your code; a prime example of this is when using the C++
+    <mark>iostream</mark> library. The way that everyone seems to change this is
+    by using <mark>using namespace std;</mark> at the top of their code. This is
+    sub-optimal, as it forces you to assume the <mark>std</mark> namespace for the
+    entirety of your code. A much better way to do that is by specifying individual
+    elements of the target namespace to bring into the current one, with statements
+    like <mark>using std::cout;</mark> or <mark>using std::string;</mark>.

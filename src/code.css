@@ -1,7 +1,19 @@
-.hl-symbol{
+.hl-include, .hl-preproc {
+    color: #E91;
+}
+
+.hl-type, .hl-structure {
+    color: #4C7;
+}
+
+.hl-symbol, .hl-keyword {
     color: #89F;
 }
 
-.hl-string {
-    color: #4C7;
+.hl-string, .hl-number {
+    color: #E56;
+}
+
+.hl-comment {
+    color: #888;
 }
