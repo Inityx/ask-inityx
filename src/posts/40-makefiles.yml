@@ -1,7 +1,7 @@
 title: What's up with the Makefile syntax?
 content:
   - >
-    Makefiles are dependency-based system. Makefiles consist of a set of targets, and a set of dependencies for each
+    Make is a dependency-based system. Makefiles consist of a set of targets, and a set of dependencies for each
     target.
   - |
     <code><pre><span class="hl-symbol">all:</span> app.exe
