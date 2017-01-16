@@ -34,45 +34,49 @@ html = Nokogiri::HTML::Builder.new(encoding: 'utf-8') { |doc|
       )
     }
     doc.body {
-      doc.main {
-        doc.header {
-          doc.h1 {
-            doc.text 'Ask Inityx'
-          }
-          doc.h2 {
-            doc.text(
-              <<-SUBTITLE
+      doc.header {
+        doc.h1 {
+          doc.text 'Ask Inityx'
+        }
+        doc.h2 {
+          doc.text(
+            <<-SUBTITLE
 Some technology-related questions
 I had in high school, and the answers
 I never got
-              SUBTITLE
-            )
-          }
+            SUBTITLE
+          )
         }
-        doc.aside(id: 'table-of-contents') {
-          doc.ol {
-            posts.each do |slug, post|
-              doc.a(href: "##{slug}") {
-                doc.li { doc << post.title }
-              }
-            end
-          }
-        }
-        doc.article {
+      }
+      doc.aside(id: 'table-of-contents') {
+        doc.ol {
           posts.each do |slug, post|
-            doc.section(class: 'post') {
-              doc.a(name: slug)
-              doc.h3 {
-                doc << post.title
-              }
-              post.content.each do |paragraph|
-                doc.p {
-                  doc << paragraph
-                }
-              end
+            doc.a(href: "##{slug}") {
+              doc.li { doc << post.title }
             }
           end
         }
+      }
+      doc.main {
+        posts.each do |slug, post|
+          doc.section(class: 'post') {
+            doc.a(name: slug)
+            doc.h3 {
+              doc << post.title
+            }
+            doc.article {
+              post.content.each do |paragraph|
+                if %w(text mark).include?(paragraph.children[0].name)
+                  doc.p {
+                    doc << paragraph
+                  }
+                else
+                  doc << paragraph
+                end
+              end
+            }
+          }
+        end
       }
     }
   }
