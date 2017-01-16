@@ -7,13 +7,13 @@ content:
     <code><pre>all: app.exe
     
     app.exe: main.cpp foo.o bar.o
-            g++ main.c foo.o bar.o -o app.exe
+    	g++ main.c foo.o bar.o -o app.exe
     
     foo.o: foo.cpp foo.h
-            g++ -c foo.cpp
+    	g++ -c foo.cpp
     
     bar.o: bar.cpp bar.h
-            g++ -c bar.cpp
+    	g++ -c bar.cpp
     </pre></code>
   - >
     <mark>all</mark> is the default target, and the other targets in this
