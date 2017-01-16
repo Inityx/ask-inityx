@@ -62,6 +62,7 @@ main {
 .post code {
     display: block;
     width:80%;
+    overflow-x: scroll;
     margin: 2em auto;
     padding: 1em;
     background-color: #333;
