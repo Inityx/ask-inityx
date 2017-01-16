@@ -33,6 +33,7 @@ body {
 
 pre {
     margin: 0;
+    white-space: pre-wrap;
 }
 
 header {
@@ -62,7 +63,6 @@ main {
 .post code {
     display: block;
     width:80%;
-    overflow-x: scroll;
     margin: 2em auto;
     padding: 1em;
     background-color: #333;
@@ -77,5 +77,9 @@ main {
     .post p {
         font-size: 1rem;
         padding: 0;
+    }
+    
+    .post code {
+        font-size: 0.7em;
     }
 }
