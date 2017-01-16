@@ -20,8 +20,8 @@ RuboCop::RakeTask.new(:style)
 task build: [
   :build_dir,
   "#{BUILD}/index.html",
-  "#{BUILD}/index.css",
-  "#{BUILD}/index.js"
+  "#{BUILD}/index.js",
+  :css
 ]
 
 task :build_dir do
@@ -32,11 +32,12 @@ file "#{BUILD}/index.html" => (["#{SRC}/index.html.rb", "#{SRC}/post.rb"] + Dir.
   ruby "#{SRC}/index.html.rb", BUILD, POSTS
 end
 
-file "#{BUILD}/index.css" => "#{SRC}/index.css" do
-  FileUtils.cp("#{SRC}/index.css", "#{BUILD}/index.css")
+file "#{BUILD}/index.js" do
 end
 
-file "#{BUILD}/index.js" do
+task css: ["#{SRC}/index.css", "#{SRC}/code.css"] do
+  FileUtils.cp("#{SRC}/index.css", "#{BUILD}/index.css")
+  FileUtils.cp("#{SRC}/code.css", "#{BUILD}/code.css")
 end
 
 task :open do

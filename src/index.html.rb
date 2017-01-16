@@ -32,6 +32,11 @@ html = Nokogiri::HTML::Builder.new(encoding: 'utf-8') { |doc|
         href: 'index.css',
         type: 'text/css'
       )
+      doc.link(
+        rel: 'stylesheet',
+        href: 'code.css',
+        type: 'text/css'
+      )
     }
     doc.body {
       doc.header {
