@@ -7,7 +7,7 @@ content:
     <code><pre><span class="hl-symbol">all:</span> app.exe
     
     <span class="hl-symbol">app.exe:</span> main.cpp foo.o bar.o
-    	<span class="hl-string">g++ main.c foo.o bar.o -o app.exe</span>
+    	<span class="hl-string">g++ main.cpp foo.o bar.o -o app.exe</span>
     
     <span class="hl-symbol">foo.o:</span> foo.cpp foo.h
     	<span class="hl-string">g++ -c foo.cpp</span>
