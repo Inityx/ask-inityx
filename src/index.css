@@ -1,4 +1,7 @@
 html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: #EEE;
     color: #222;
     font-family: Helvetica, sans-serif;
@@ -23,7 +26,7 @@ main mark {
 
 body {
     width: 40rem;
-    max-width: 90%;
+    max-width: 85%;
     padding: 0 5%;
     margin: 0 auto;
 }
@@ -59,7 +62,8 @@ main {
 .post code {
     display: block;
     width:80%;
-    margin: auto 2em;
+    overflow-x: scroll;
+    margin: 2em auto;
     padding: 1em;
     background-color: #333;
     color: #EEE;
