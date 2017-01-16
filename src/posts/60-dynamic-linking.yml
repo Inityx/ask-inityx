@@ -1,3 +1,36 @@
 title: Does including libraries increase my executable size in C/++?
 content:
-  - Maybe
+  - >
+    When you include a library in a compiled language like C/++, it undergoes
+    an additional step during compilation called Linking. This happens when code
+    has been compiled into separate executables that must be linked together to
+    complete the binary. In C/++, programmers usually only deal with linking when
+    compiling their project in separate compilation objects, referenced by header
+    files.  However, behind the scenes, the compiler must also link libraries like
+    <mark>stdio</mark> automatically, and must be told to link to other libraries
+    like <mark>pthread</mark> manually with compiler flags like
+    <mark>-lpthread</mark>.
+  - >
+    There are two types of linking: static linking and dynamic linking.
+    Binaries that must be portable often employ static linking; a process in which
+    all code necessary to run the application is compiled into the binary itself.
+    This makes the binary more self-contained, but it also makes it much larger.
+  - >
+    The other type of linking is dynamic linking, or referencing an external binary
+    installed separately on the system. Windows employs this with
+    Dynamic-link Libraries, or <mark>.dll</mark> files. Unix-like operating systems
+    use the Executable and Linkable Format (ELF), implemented as Shared Object
+    files with the extension <mark>.so</mark>. This method only increases your
+    binary size by the amount needed to refer to the external function, but it
+    makes your program dependent on the reliable installation of a specific version
+    of the external code.
+  - >
+    Most Unix-like operating systems have the luxury of a
+    Package Manager, which manages application dependencies automatically.
+    Windows is not one of these operating systems; this is why there are so many
+    versions of the Microsoft Visual C++ library installed on many computers.
+  - >
+    GCC links libraries dynamically, and local compilation objects statically by
+    default. There are a very large number of linker parameters that can be
+    passed to GCC, depending on the desired behavior. Compilers for less ubiquitous
+    languages like Rust might default to static linking to increase portability.
