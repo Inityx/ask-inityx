@@ -25,6 +25,9 @@ content:
     call using the File Control library <mark>fcntl.h</mark>, but it is far more
     convenient to just use <mark>stdio</mark>.
   - >
-    Output redirection works by assigning the program's output to a real file
-    rather than the virtual one connected to the terminal, wheras piping sets
-    up a virtual file between two processes.
+    Two specializations of program output are file redirection and piping.
+    When a program's input or output is redirected with angle brackets, the kernel
+    assigns a real file as <mark>stdin</mark> or <mark>stdout</mark> instead of a
+    virtual one.  When IO is piped between two programs, the kernel creates a
+    virtual file as usual, and it's mapped to one programs <mark>stdout</mark> and
+    the other's <mark>stdin</mark>.
