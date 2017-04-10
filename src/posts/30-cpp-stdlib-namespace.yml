@@ -9,31 +9,31 @@ content:
     that if you want to use a string, you specify that you want the Standard
     Library string by saying <mark>std::string</mark>.
   - |
-    <code><pre>
-    <span class="hl-include">#include &lt;yours&gt;</span>
+    <pre class="prettyprint lang-cpp">
+    #include &lt;yours&gt;
     
-    <span class="hl-structure">namespace</span> my {
-        <span class="hl-structure">struct</span> Point {
-            <span class="hl-type">int</span> x;
-            <span class="hl-type">int</span> y;
+    namespace my {
+        struct Point {
+            int x;
+            int y;
             
-            Point(<span class="hl-type">int</span> ix, <span class="hl-type">int</span> iy):
+            Point(int ix, int iy):
                 x(ix), y(iy) {}
         };
         
-        <span class="hl-type">void</span> foo(Point x) {
-            <span class="hl-comment">// do something with x</span>
+        void foo(Point x) {
+            // do something with x
         }
     }
     
-    <span class="hl-type">int</span> main() {
-        your::Point x(<span class="hl-number">5</span>,<span class="hl-number">6</span>);
+    int main() {
+        your::Point x(5,6);
         your::foo(x);
         
-        my::Point y(<span class="hl-number">5</span>,<span class="hl-number">6</span>);
+        my::Point y(5,6);
         my::foo(y);
     }
-    </pre></code>
+    </pre>
   - >
     In this example, we have our namespace <mark>my</mark>, and the namespace
     <mark>your</mark> from the included library. Namespacing allows both versions

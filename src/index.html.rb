@@ -37,6 +37,9 @@ html = Nokogiri::HTML::Builder.new(encoding: 'utf-8') { |doc|
         href: 'code.css',
         type: 'text/css'
       )
+      doc.script(
+        src: 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=doxy'
+      )
     }
     doc.body {
       doc.header {
